@@ -1,0 +1,11 @@
+= render 'head'
+%body
+  #header
+    %div
+      %a{ href: root_path }
+        %h1 Pickaxe
+      = render 'flash'
+  = yield
+  #footer
+    %div
+      %cite Designed in beautiuful Boulder, Colorado.

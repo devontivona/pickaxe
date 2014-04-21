@@ -1,0 +1,16 @@
+.container
+  .content
+    %table
+      %tr
+        %th{ colspan: 2} Program
+      - if @programs.count > 0
+        - @programs.each do |program|
+          %tr
+            %td= link_to program.name, program_path(program)
+            %td.actions
+              = link_to "Edit", edit_program_path(program)
+              = link_to "Delete", program, method: :delete, data: { confirm: 'Are you sure?' }
+      - else
+        %tr
+          %td There are no programs written yet
+    = link_to "New Program", new_program_path, class: :button

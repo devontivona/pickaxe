@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+$highlight-color: rgb(215, 93, 83)
+$background-color: rgb(243, 240, 232)
+$font-family: "Avenir Next", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+$max: 120
+
+@import bourbon
+@import huxley
+@import verne
+
+// Layout
+
+#footer, #header
+  text-align: center
+  @include container
+  @include scaffold-span(xs, 12)
+  a
+    text-decoration: none
+  padding:
+    top: $rhythm * 6
+    bottom: $rhythm * 6
+
+#header
+  padding-bottom: 0
+
+#programs, #program, #program-edit, #program-new
+  @include container
+  @include scaffold-span(xs, 12)
+
+textarea
+  height: $rhythm * 60 !important
+
+// Table
+
+table
+  @extend %table
+  th
+    font-weight: 600
+  tr
+    td, th 
+      padding:
+        left: $rhythm !important
+        right: $rhythm !important
+  td.actions i
+    margin-left: $rhythm
+
+// Grid
+
+.container
+  @include container
+
+// Code
+
+pre
+  @extend %pre
+  // TODO: Move this into Verne
+  text-align: left
+  overflow: scroll
+
+// Buttons
+
+.button, .button_to input
+  @extend %button
+  @extend %button-is-highlight  
+
+// Forms
+
+form
+  @extend %form
+
+.input
+  @extend %input
+  &.check_boxes, &.radio-buttons
+    @extend %input-is-buttons
+  &.invalid
+    @extend %input-is-invalid
+input[type=submit]
+  background: transparent
+
+// Alerts
+
+.flash
+  @extend %alert
+
+// Typography
+
+h1
+  @extend %primary-header
+
+h2
+  @extend %secondary-header
+
+h3
+  @extend %tertiary-header
+
+h4
+  @extend %quaternary-header
+
+h5
+  @extend %copy
+  @extend %copy-is-large
+  font-weight: 500
+
+cite
+  @extend %cite

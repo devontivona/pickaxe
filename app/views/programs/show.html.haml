@@ -1,0 +1,5 @@
+#program
+  %div
+    %h2= @program.name
+    %pre= @program.instructions
+    = link_to "Edit Program", edit_program_path(@program), class: :button
