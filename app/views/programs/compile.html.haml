@@ -1,0 +1,11 @@
+#program
+  %div
+    %h2= @program.name
+    %h3 Program
+    %pre= @instructions
+    %h3 Command
+    %pre= @command
+    %h3 Result
+    %pre= @result
+
+    = link_to "Back", @program, class: :button

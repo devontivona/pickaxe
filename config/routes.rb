@@ -1,4 +1,6 @@
 Pickaxe::Application.routes.draw do
   root to: "programs#index"
-  resources :programs
+  resources :programs do
+    post 'compile', on: :member
+  end
 end
